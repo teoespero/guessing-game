@@ -23,9 +23,15 @@
 			<meta name="description" content="">
   			<meta name="author" content="teoespero">
   			<script type="text/javascript">
+
+  				var theNumber = 0
+  				function getNumber(){
+  					return theNumber = Math.floor(Math.random() * 9) + 1;     // returns a random integer from 1 to 10
+  				}
+
   				function myFunction (theirGuess) {
   					// body...
-  					var secretNumber = 4;
+  					var secretNumber = theNumber;
 
   					if (theirGuess < secretNumber){
   						document.getElementById('theResult').value = theirGuess +". Your guess is too low.";
@@ -39,7 +45,7 @@
   				}
   			</script>
 	</head>
-	<body>
+	<body onload="getNumber()">
 		<div class="container">
 			<h2>Guessing Game</h2>
 			<form class="form-inline">
