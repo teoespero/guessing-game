@@ -32,16 +32,20 @@
   				function myFunction (theirGuess) {
   					// body...
   					var secretNumber = theNumber;
-
-  					if (theirGuess < secretNumber){
-  						document.getElementById('theResult').value = theirGuess +". Your guess is too low.";
-  					}
-  					else if (theirGuess > secretNumber) {
-  						document.getElementById('theResult').value =  theirGuess +". Your guess is too high.";
-  					}
-  					else {
-  						document.getElementById('theResult').value = secretNumber + ". That's it. You guessed it right.";	
-  					}
+  					if (isNaN(theirGuess)){
+  						document.getElementById('theResult').value = "Please enter a number.";	
+			  		}
+			  		else {
+			  			if (theirGuess < secretNumber){
+			  				document.getElementById('theResult').value = theirGuess +". Your guess is too low.";
+			  			}
+			  			else if (theirGuess > secretNumber) {
+							document.getElementById('theResult').value =  theirGuess +". Your guess is too high.";						
+						}
+						else {
+			  				document.getElementById('theResult').value = secretNumber + ". That's it. You guessed it right.";	
+			  			}
+			  		}
   				}
   			</script>
 	</head>
